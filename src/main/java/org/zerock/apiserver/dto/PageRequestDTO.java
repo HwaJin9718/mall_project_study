@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class PageRequestDTO {
