@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TodoServiceTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TodoServiceTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.zerock.apiserver.service.html">org.zerock.apiserver.service</a> &gt; TodoServiceTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.547s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGet()</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetList()</td>
+<td class="success">0.517s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRegister()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-08-06T16:12:10.251+09:00  INFO 19932 --- [apiserver] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.zerock.apiserver.service.TodoServiceTests]: TodoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-06T16:12:10.266+09:00  INFO 19932 --- [apiserver] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.service.TodoServiceTests
+Hibernate: 
+    select
+        t1_0.tno,
+        t1_0.complete,
+        t1_0.content,
+        t1_0.due_date,
+        t1_0.title 
+    from
+        tbl_todo t1_0 
+    where
+        t1_0.tno=?
+2024-08-06T16:12:10.279+09:00  INFO 19932 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : TodoDTO(tno=50, title=Title..48, content=Content...48, complete=false, dueDate=2023-12-30)
+2024-08-06T16:12:10.289+09:00  INFO 19932 --- [apiserver] [    Test worker] o.z.a.repository.search.TodoSearchImpl   : search1....................................
+Hibernate: 
+    select
+        t1_0.tno,
+        t1_0.complete,
+        t1_0.content,
+        t1_0.due_date,
+        t1_0.title 
+    from
+        tbl_todo t1_0 
+    order by
+        t1_0.tno desc 
+    limit
+        ?, ?
+Hibernate: 
+    select
+        count(t1_0.tno) 
+    from
+        tbl_todo t1_0
+2024-08-06T16:12:10.798+09:00  INFO 19932 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : PageResponseDTO(dtoList=[TodoDTO(tno=204, title=Title..., content=Content................, complete=false, dueDate=2023-12-31), TodoDTO(tno=203, title=Title..99, content=Content...99, complete=false, dueDate=2023-12-30), TodoDTO(tno=202, title=Title..98, content=Content...98, complete=false, dueDate=2023-12-30), TodoDTO(tno=201, title=Title..97, content=Content...97, complete=false, dueDate=2023-12-30), TodoDTO(tno=200, title=Title..96, content=Content...96, complete=false, dueDate=2023-12-30), TodoDTO(tno=199, title=Title..95, content=Content...95, complete=false, dueDate=2023-12-30), TodoDTO(tno=198, title=Title..94, content=Content...94, complete=false, dueDate=2023-12-30), TodoDTO(tno=197, title=Title..93, content=Content...93, complete=false, dueDate=2023-12-30), TodoDTO(tno=196, title=Title..92, content=Content...92, complete=false, dueDate=2023-12-30), TodoDTO(tno=195, title=Title..91, content=Content...91, complete=false, dueDate=2023-12-30)], pageNumList=[11, 12, 13, 14, 15, 16, 17, 18, 19, 20], pageRequestDTO=PageRequestDTO(page=11, size=10), prev=true, next=true, totalCount=303, prevPage=10, nextPage=21, totalPage=10, current=11)
+Hibernate: 
+    insert 
+    into
+        tbl_todo
+        (complete, content, due_date, title) 
+    values
+        (?, ?, ?, ?) 
+    returning tno
+2024-08-06T16:12:10.819+09:00  INFO 19932 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : 305
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 8. 6. 오후 4:12:11</p>
+</div>
+</div>
+</body>
+</html>

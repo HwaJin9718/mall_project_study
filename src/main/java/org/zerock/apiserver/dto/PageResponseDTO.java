@@ -51,6 +51,10 @@ public class PageResponseDTO<E> {
 
         this.nextPage = next ? end + 1 : 0;
 
+        this.totalPage = this.pageNumList.size();
+
+        this.current = pageRequestDTO.getPage();
+
     }
 
 }
