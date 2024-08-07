@@ -35,6 +35,7 @@
     <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:2.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.querydsl:querydsl-apt:jakarta:5.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.querydsl:querydsl-jpa:jakarta:5.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.coobird:thumbnailator:0.4.19" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate.orm:hibernate-core:6.5.2.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:3.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:3.3.2" level="project" />
