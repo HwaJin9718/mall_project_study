@@ -89,7 +89,8 @@ public class CustomFileUtil {
         HttpHeaders headers = new HttpHeaders();
 
         try {
-            headers.add("Content_Type", Files.probeContentType(resource.getFile().toPath()));
+            headers.add("Content-Type", Files.probeContentType(resource.getFile().toPath()));
+            //  "Content-Type"  HttpHeaders.CONTENT_TYPE
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
