@@ -14,6 +14,7 @@ import org.zerock.apiserver.util.CustomFileUtil;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @Log4j2
@@ -75,6 +76,47 @@ public class ProductController {
     @GetMapping("/{pno}")
     public ProductDTO read(@PathVariable("pno") Long pno) {
         return productService.get(pno);
+    }
+
+    @PutMapping("/{pno}")
+    public Map<String, String> modify(@PathVariable Long pno, ProductDTO productDTO) {
+        
+        // 새로 등록되어 이미지 업로드 필요한 이미지는 저장이 필요
+        // 기존에 저장되어 업로드된 파일(DB에 이미 저장된 파일)에 새로 등록된 이미지 저장 필요
+
+        productDTO.setPno(pno);
+
+        // 이 후 삭제된 파일을 알 기 위해 기존 DB에 등록된 파일을 조회해가지고 옴
+        ProductDTO oldProductDTO = productService.get(pno);
+
+        // 새로은 파일 업로드 진행
+        List<MultipartFile> files = productDTO.getFiles();
+        List<String> currentUploadFileNames = fileUtil.saveFiles(files);
+
+        // 기존에 저장되고 이번에 수정하지 않아 지우지 않을 파일 = 계속 남아있을 파일
+        List<String> uploadedFileNames = productDTO.getUploadFileNames();
+
+        // 파일 목록 만들기 -> 현재 등록 필요한 파일 등록
+        if(currentUploadFileNames != null && !currentUploadFileNames.isEmpty()) {
+            uploadedFileNames.addAll(currentUploadFileNames);
+        }
+
+        productService.modify(productDTO);
+
+        // 이제 필요없는 파일 삭제
+        List<String> oldFIleNames = oldProductDTO.getUploadFileNames();
+        if(oldFIleNames != null && oldFIleNames.size() > 0) {
+
+            List<String> removeFiles =
+                    oldFIleNames.stream().filter(fileName ->
+                            uploadedFileNames.indexOf(fileName) == -1).collect(Collectors.toList());
+
+            fileUtil.deleteFiles(removeFiles);
+
+        }
+
+        return Map.of("RESULT", "SUCCESS");
+        
     }
 
 }
