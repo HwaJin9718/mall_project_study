@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.057s</div>
+<div class="counter">1.067s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,8 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testList()</td>
-<td class="success">1.057s</td>
+<td class="success">testRegister()</td>
+<td class="success">1.067s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>10:41:11.171 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.zerock.apiserver.service.ProductServiceTests]: ProductServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:41:11.350 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.service.ProductServiceTests
+<pre>12:49:35.823 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.zerock.apiserver.service.ProductServiceTests]: ProductServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:49:36.147 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.service.ProductServiceTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -99,124 +99,116 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2024-08-12T10:41:12.020+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : Starting ProductServiceTests using Java 17.0.9 with PID 1360 (started by Hwa Jin.Song in D:\study\my-study\mall_project\mall_project_study)
-2024-08-12T10:41:12.022+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-08-12T10:41:13.137+09:00  INFO 1360 --- [apiserver] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-12T10:41:13.262+09:00  INFO 1360 --- [apiserver] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 2 JPA repository interfaces.
-2024-08-12T10:41:13.779+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : Driver class org.mariadb.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e
-2024-08-12T10:41:13.959+09:00  INFO 1360 --- [apiserver] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-12T10:41:14.049+09:00  INFO 1360 --- [apiserver] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-08-12T10:41:14.098+09:00  INFO 1360 --- [apiserver] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-12T10:41:14.587+09:00  INFO 1360 --- [apiserver] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-12T10:41:14.629+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - configuration:
-2024-08-12T10:41:14.636+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
-2024-08-12T10:41:14.636+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
-2024-08-12T10:41:14.636+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : catalog.........................none
-2024-08-12T10:41:14.636+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
-2024-08-12T10:41:14.637+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
-2024-08-12T10:41:14.637+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............30000
-2024-08-12T10:41:14.638+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSource......................none
-2024-08-12T10:41:14.638+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
-2024-08-12T10:41:14.639+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
-2024-08-12T10:41:14.640+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=&lt;masked&gt;}
-2024-08-12T10:41:14.641+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : driverClassName.................&quot;org.mariadb.jdbc.Driver&quot;
-2024-08-12T10:41:14.641+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
-2024-08-12T10:41:14.642+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
-2024-08-12T10:41:14.642+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
-2024-08-12T10:41:14.642+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
-2024-08-12T10:41:14.642+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
-2024-08-12T10:41:14.643+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
-2024-08-12T10:41:14.643+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mariadb://localhost:3306/apidb
-2024-08-12T10:41:14.644+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
-2024-08-12T10:41:14.644+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
-2024-08-12T10:41:14.644+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
-2024-08-12T10:41:14.644+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
-2024-08-12T10:41:14.645+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
-2024-08-12T10:41:14.645+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
-2024-08-12T10:41:14.645+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................10
-2024-08-12T10:41:14.645+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : password........................&lt;masked&gt;
-2024-08-12T10:41:14.646+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : poolName........................&quot;HikariPool-1&quot;
-2024-08-12T10:41:14.646+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : readOnly........................false
-2024-08-12T10:41:14.646+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
-2024-08-12T10:41:14.647+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
-2024-08-12T10:41:14.647+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : schema..........................none
-2024-08-12T10:41:14.647+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
-2024-08-12T10:41:14.647+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
-2024-08-12T10:41:14.648+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : username........................&quot;apidbuser&quot;
-2024-08-12T10:41:14.648+09:00 DEBUG 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
-2024-08-12T10:41:14.648+09:00  INFO 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-12T10:41:14.814+09:00  INFO 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3c6bd624
-2024-08-12T10:41:14.817+09:00  INFO 1360 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-12T10:41:14.915+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@334b392d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@59f7c106)
-2024-08-12T10:41:14.916+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@136fece2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@56478522)
-2024-08-12T10:41:14.916+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3caf5c96) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5b3755f4)
-2024-08-12T10:41:14.918+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@37d3aa8c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@5dd747c1)
-2024-08-12T10:41:14.918+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1bdafb01) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7aa3857b)
-2024-08-12T10:41:14.919+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@500ec769) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@37806be6)
-2024-08-12T10:41:14.919+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7bce9ce4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1d2046bb)
-2024-08-12T10:41:14.920+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3b33fff9) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@fd87c22)
-2024-08-12T10:41:14.920+09:00 DEBUG 1360 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@fee881) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1ff463bb)
-2024-08-12T10:41:14.931+09:00 DEBUG 1360 --- [apiserver] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
-2024-08-12T10:41:14.936+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@72792362
-2024-08-12T10:41:14.978+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=2, active=0, idle=2, waiting=0)
-2024-08-12T10:41:14.982+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@271147c5
-2024-08-12T10:41:15.025+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=3, active=0, idle=3, waiting=0)
-2024-08-12T10:41:15.029+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7aaa03da
-2024-08-12T10:41:15.073+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=4, active=0, idle=4, waiting=0)
-2024-08-12T10:41:15.077+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@440b3d74
-2024-08-12T10:41:15.119+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=5, active=0, idle=5, waiting=0)
-2024-08-12T10:41:15.124+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@418555df
-2024-08-12T10:41:15.166+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=6, active=0, idle=6, waiting=0)
-2024-08-12T10:41:15.169+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@68b6f6df
-2024-08-12T10:41:15.214+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=7, active=0, idle=7, waiting=0)
-2024-08-12T10:41:15.218+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@5c6ebabb
-2024-08-12T10:41:15.261+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=8, active=0, idle=8, waiting=0)
-2024-08-12T10:41:15.264+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@d3814f7
-2024-08-12T10:41:15.308+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=9, active=0, idle=9, waiting=0)
-2024-08-12T10:41:15.312+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@35cbc69f
-2024-08-12T10:41:15.355+09:00 DEBUG 1360 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
-2024-08-12T10:41:16.058+09:00  INFO 1360 --- [apiserver] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-08-12T10:41:16.146+09:00  INFO 1360 --- [apiserver] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-12T10:41:16.162+09:00  INFO 1360 --- [apiserver] [    Test worker] o.zerock.apiserver.util.CustomFileUtil   : ---------------------------------
-2024-08-12T10:41:16.163+09:00  INFO 1360 --- [apiserver] [    Test worker] o.zerock.apiserver.util.CustomFileUtil   : D:\study\my-study\mall_project\mall_project_study\upload
-2024-08-12T10:41:16.671+09:00  INFO 1360 --- [apiserver] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-08-12T10:41:17.747+09:00  WARN 1360 --- [apiserver] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-12T10:41:17.761+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.config.CustomServletConfig         : --------------------------------------
-2024-08-12T10:41:17.762+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.config.CustomServletConfig         : addFormatters
-2024-08-12T10:41:18.374+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : Started ProductServiceTests in 6.686 seconds (process running for 8.415)
+2024-08-12T12:49:36.872+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : Starting ProductServiceTests using Java 17.0.9 with PID 13836 (started by Hwa Jin.Song in D:\study\my-study\mall_project\mall_project_study)
+2024-08-12T12:49:36.875+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-08-12T12:49:38.087+09:00  INFO 13836 --- [apiserver] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-12T12:49:38.228+09:00  INFO 13836 --- [apiserver] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 2 JPA repository interfaces.
+2024-08-12T12:49:38.825+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : Driver class org.mariadb.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e
+2024-08-12T12:49:39.041+09:00  INFO 13836 --- [apiserver] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-12T12:49:39.169+09:00  INFO 13836 --- [apiserver] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-12T12:49:39.223+09:00  INFO 13836 --- [apiserver] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-12T12:49:39.733+09:00  INFO 13836 --- [apiserver] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-12T12:49:39.781+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - configuration:
+2024-08-12T12:49:39.786+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2024-08-12T12:49:39.787+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2024-08-12T12:49:39.787+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2024-08-12T12:49:39.787+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2024-08-12T12:49:39.788+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2024-08-12T12:49:39.789+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............30000
+2024-08-12T12:49:39.789+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2024-08-12T12:49:39.790+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2024-08-12T12:49:39.790+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2024-08-12T12:49:39.791+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=&lt;masked&gt;}
+2024-08-12T12:49:39.792+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : driverClassName.................&quot;org.mariadb.jdbc.Driver&quot;
+2024-08-12T12:49:39.793+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2024-08-12T12:49:39.793+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2024-08-12T12:49:39.793+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2024-08-12T12:49:39.794+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................600000
+2024-08-12T12:49:39.794+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2024-08-12T12:49:39.795+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2024-08-12T12:49:39.795+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:mariadb://localhost:3306/apidb
+2024-08-12T12:49:39.795+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................0
+2024-08-12T12:49:39.796+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2024-08-12T12:49:39.796+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2024-08-12T12:49:39.796+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2024-08-12T12:49:39.796+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2024-08-12T12:49:39.797+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2024-08-12T12:49:39.797+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................10
+2024-08-12T12:49:39.798+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : password........................&lt;masked&gt;
+2024-08-12T12:49:39.798+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : poolName........................&quot;HikariPool-1&quot;
+2024-08-12T12:49:39.798+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2024-08-12T12:49:39.799+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2024-08-12T12:49:39.800+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2024-08-12T12:49:39.800+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2024-08-12T12:49:39.801+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2024-08-12T12:49:39.801+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2024-08-12T12:49:39.801+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : username........................&quot;apidbuser&quot;
+2024-08-12T12:49:39.801+09:00 DEBUG 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2024-08-12T12:49:39.801+09:00  INFO 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-12T12:49:40.000+09:00  INFO 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2211b44f
+2024-08-12T12:49:40.002+09:00  INFO 13836 --- [apiserver] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-12T12:49:40.089+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1be77a76) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@315cf170)
+2024-08-12T12:49:40.090+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7878bbdb) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@25f7cc38)
+2024-08-12T12:49:40.091+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@563263a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@53e28097)
+2024-08-12T12:49:40.091+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6e794f53) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@75f4d8a8)
+2024-08-12T12:49:40.092+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@69ba72da) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2e1ba142)
+2024-08-12T12:49:40.093+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@abc7005) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@595ec862)
+2024-08-12T12:49:40.094+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@63c84d31) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@102af1bb)
+2024-08-12T12:49:40.094+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@797f97e3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@56cd5d76)
+2024-08-12T12:49:40.095+09:00 DEBUG 13836 --- [apiserver] [    Test worker] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@77cd235b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@302da330)
+2024-08-12T12:49:40.106+09:00 DEBUG 13836 --- [apiserver] [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+2024-08-12T12:49:40.111+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@435cfad6
+2024-08-12T12:49:40.152+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=2, active=0, idle=2, waiting=0)
+2024-08-12T12:49:40.155+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@16850a9b
+2024-08-12T12:49:40.197+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=3, active=0, idle=3, waiting=0)
+2024-08-12T12:49:40.200+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@deeed46
+2024-08-12T12:49:40.243+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=4, active=0, idle=4, waiting=0)
+2024-08-12T12:49:40.247+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4a5664af
+2024-08-12T12:49:40.289+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=5, active=0, idle=5, waiting=0)
+2024-08-12T12:49:40.293+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2c6c2751
+2024-08-12T12:49:40.335+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=6, active=0, idle=6, waiting=0)
+2024-08-12T12:49:40.339+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@13269c16
+2024-08-12T12:49:40.382+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=7, active=0, idle=7, waiting=0)
+2024-08-12T12:49:40.387+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7519f3d1
+2024-08-12T12:49:40.429+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=8, active=0, idle=8, waiting=0)
+2024-08-12T12:49:40.435+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@6bc66e16
+2024-08-12T12:49:40.475+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=9, active=0, idle=9, waiting=0)
+2024-08-12T12:49:40.479+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@72ad8c57
+2024-08-12T12:49:40.522+09:00 DEBUG 13836 --- [apiserver] [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2024-08-12T12:49:41.932+09:00  INFO 13836 --- [apiserver] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-12T12:49:42.015+09:00  INFO 13836 --- [apiserver] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-12T12:49:42.031+09:00  INFO 13836 --- [apiserver] [    Test worker] o.zerock.apiserver.util.CustomFileUtil   : ---------------------------------
+2024-08-12T12:49:42.032+09:00  INFO 13836 --- [apiserver] [    Test worker] o.zerock.apiserver.util.CustomFileUtil   : D:\study\my-study\mall_project\mall_project_study\upload
+2024-08-12T12:49:42.543+09:00  INFO 13836 --- [apiserver] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-12T12:49:43.685+09:00  WARN 13836 --- [apiserver] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-12T12:49:43.702+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.config.CustomServletConfig         : --------------------------------------
+2024-08-12T12:49:43.702+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.config.CustomServletConfig         : addFormatters
+2024-08-12T12:49:44.390+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : Started ProductServiceTests in 7.857 seconds (process running for 9.772)
+2024-08-12T12:49:45.310+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : ----------------------
+2024-08-12T12:49:45.318+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : Product(pno=null, pname=새로운 상품, price=1000, pdesc=신규 추가 상품입니다., delFlag=false)
+2024-08-12T12:49:45.319+09:00  INFO 13836 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : [ProductImage(fileName=36048bad-c253-422a-b0a7-0dc1c2364676_Test1.jpg, ord=0), ProductImage(fileName=ce7053f5-acde-47cf-bfbd-417cab956229_Test2.jpg, ord=1)]
 Hibernate: 
-    select
-        p1_0.pno,
-        p1_0.del_flag,
-        p1_0.pdesc,
-        p1_0.pname,
-        p1_0.price,
-        il1_0.file_name,
-        il1_0.ord 
-    from
-        tbl_product p1_0 
-    left join
-        product_image_list il1_0 
-            on p1_0.pno=il1_0.product_pno 
-    where
-        il1_0.ord=0 
-        and p1_0.del_flag=0 
-    order by
-        p1_0.pno desc 
-    limit
-        ?
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
 Hibernate: 
-    select
-        count(p1_0.pno) 
-    from
-        tbl_product p1_0 
-    left join
-        product_image_list il1_0 
-            on p1_0.pno=il1_0.product_pno 
-    where
-        il1_0.ord=0 
-        and p1_0.del_flag=0
-2024-08-12T10:41:19.437+09:00  INFO 1360 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : [ProductDTO(pno=11, pname=Test 9, price=1000, pdesc=Test Desc ...9, delFlag=false, files=[], uploadFileNames=[dad9b100-a297-4703-b0ec-c1a66c675665_IMAGE1.jpg]), ProductDTO(pno=10, pname=Test 8, price=1000, pdesc=Test Desc ...8, delFlag=false, files=[], uploadFileNames=[1e31d265-8a29-4402-b314-960ffcbb13bb_IMAGE1.jpg]), ProductDTO(pno=9, pname=Test 7, price=1000, pdesc=Test Desc ...7, delFlag=false, files=[], uploadFileNames=[316d8692-30d9-419c-9c00-72fe9e7b5238_IMAGE1.jpg]), ProductDTO(pno=8, pname=Test 6, price=1000, pdesc=Test Desc ...6, delFlag=false, files=[], uploadFileNames=[4f83f4ea-8d62-4b16-a23d-02e0af505958_IMAGE1.jpg]), ProductDTO(pno=7, pname=Test 5, price=1000, pdesc=Test Desc ...5, delFlag=false, files=[], uploadFileNames=[c754d5d1-13b3-47df-bf79-d2bcb914b493_IMAGE1.jpg]), ProductDTO(pno=6, pname=Test 4, price=1000, pdesc=Test Desc ...4, delFlag=false, files=[], uploadFileNames=[16b41b28-d7d2-45ea-8d00-0903c28bddf3_IMAGE1.jpg]), ProductDTO(pno=5, pname=Test 3, price=1000, pdesc=Test Desc ...3, delFlag=false, files=[], uploadFileNames=[fea5a690-624e-423d-a674-90202dbbbf5d_IMAGE1.jpg]), ProductDTO(pno=4, pname=Test 2, price=1000, pdesc=Test Desc ...2, delFlag=false, files=[], uploadFileNames=[cbf4c6df-8763-4055-bf4c-19483d4c9d6e_IMAGE1.jpg]), ProductDTO(pno=3, pname=Test 1, price=1000, pdesc=Test Desc ...1, delFlag=false, files=[], uploadFileNames=[4881baf4-6108-4a44-b0f6-d4228bd1aadf_IMAGE1.jpg]), ProductDTO(pno=2, pname=Test 0, price=1000, pdesc=Test Desc ...0, delFlag=false, files=[], uploadFileNames=[1e211338-2b1f-498e-8568-fc608ad28597_IMAGE1.jpg])]
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
 </pre>
 </span>
 </div>
@@ -228,7 +220,7 @@ Hibernate:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 8. 12. 오전 10:41:19</p>
+<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 8. 12. 오후 12:49:45</p>
 </div>
 </div>
 </body>
