@@ -119,4 +119,19 @@ public class ProductController {
         
     }
 
+    // 원래 삭제 기능은 없음, 다만 delFlag 값을 수정하는 것으로 보이지 않도록 처리함
+    // 지금은 연습 하라고 하는 부분!!
+    @DeleteMapping("/{pno}")
+    public Map<String, String> remove(@PathVariable Long pno) {
+
+        List<String> oldFileNames = productService.get(pno).getUploadFileNames();
+
+        productService.remove(pno);
+
+        fileUtil.deleteFiles(oldFileNames);
+
+        return Map.of("RESULT", "SUCCESS");
+
+    }
+
 }

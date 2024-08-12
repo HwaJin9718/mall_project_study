@@ -123,6 +123,15 @@ public class ProductServiceImpl implements ProductService{
 
     }
 
+    @Override
+    public void remove(Long pno) {
+
+        // 원래 삭제 기능은 없음, 다만 delFlag 값을 수정하는 것으로 보이지 않도록 처리함
+        // 지금은 연습 하라고 하는 부분!!
+        productRepository.deleteById(pno);
+
+    }
+
     private ProductDTO entityToDTO(Product product) {
 
         ProductDTO productDTO = ProductDTO.builder()
