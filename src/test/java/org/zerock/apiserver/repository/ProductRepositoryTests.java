@@ -44,7 +44,7 @@ public class ProductRepositoryTests {
 
     }
 
-    //@Transactional // Transactional 없으면 오류 생성됨
+    @Transactional // Transactional 없으면 오류 생성됨
     @Test
     public void testRead() {
 

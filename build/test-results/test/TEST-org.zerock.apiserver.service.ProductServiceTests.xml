@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.zerock.apiserver.service.ProductServiceTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-08-19T07:06:36" hostname="DESKTOP-G6GID5V" time="0.033">
+  <properties/>
+  <testcase name="testList()" classname="org.zerock.apiserver.service.ProductServiceTests" time="0.018"/>
+  <testcase name="testRegister()" classname="org.zerock.apiserver.service.ProductServiceTests" time="0.013"/>
+  <system-out><![CDATA[2024-08-19T16:06:35.995+09:00  INFO 4316 --- [apiserver] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.zerock.apiserver.service.ProductServiceTests]: ProductServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-19T16:06:36.005+09:00  INFO 4316 --- [apiserver] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.service.ProductServiceTests
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price,
+        il1_0.file_name,
+        il1_0.ord 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=0 
+        and p1_0.del_flag=0 
+    order by
+        p1_0.pno desc 
+    limit
+        ?
+Hibernate: 
+    select
+        count(p1_0.pno) 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=0 
+        and p1_0.del_flag=0
+2024-08-19T16:06:36.024+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceTests        : [ProductDTO(pno=59, pname=Test 9, price=1000, pdesc=Test Desc ...9, delFlag=false, files=[], uploadFileNames=[c9443674-9e18-4971-ae53-e4ab2b22f79d_IMAGE1.jpg]), ProductDTO(pno=58, pname=Test 8, price=1000, pdesc=Test Desc ...8, delFlag=false, files=[], uploadFileNames=[b75b95ed-bc7f-49bc-9f40-73274eb46b6f_IMAGE1.jpg]), ProductDTO(pno=57, pname=Test 7, price=1000, pdesc=Test Desc ...7, delFlag=false, files=[], uploadFileNames=[3aa02366-044a-497c-a91b-33bc2fd73059_IMAGE1.jpg]), ProductDTO(pno=56, pname=Test 6, price=1000, pdesc=Test Desc ...6, delFlag=false, files=[], uploadFileNames=[7a793005-c87c-4c4a-8731-549c1cf5556d_IMAGE1.jpg]), ProductDTO(pno=55, pname=Test 5, price=1000, pdesc=Test Desc ...5, delFlag=false, files=[], uploadFileNames=[e3c851b2-81d6-4042-90da-6f9e75a39ede_IMAGE1.jpg]), ProductDTO(pno=54, pname=Test 4, price=1000, pdesc=Test Desc ...4, delFlag=false, files=[], uploadFileNames=[2eb7cd94-4dd5-4caa-8fed-bb658005ef46_IMAGE1.jpg]), ProductDTO(pno=53, pname=Test 3, price=1000, pdesc=Test Desc ...3, delFlag=false, files=[], uploadFileNames=[472d9c4f-b9a1-4b17-8f29-525fea308d51_IMAGE1.jpg]), ProductDTO(pno=52, pname=Test 2, price=1000, pdesc=Test Desc ...2, delFlag=false, files=[], uploadFileNames=[4aab91fe-3705-4531-bdd7-b3d3ba02f27c_IMAGE1.jpg]), ProductDTO(pno=51, pname=Test 1, price=1000, pdesc=Test Desc ...1, delFlag=false, files=[], uploadFileNames=[6aed7520-8573-46ef-80d4-db0892132c02_IMAGE1.jpg]), ProductDTO(pno=50, pname=Test 0, price=1000, pdesc=Test Desc ...0, delFlag=false, files=[], uploadFileNames=[c520ab8e-8568-4b43-b729-7262acebfd90_IMAGE1.jpg])]
+2024-08-19T16:06:36.031+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : ----------------------
+2024-08-19T16:06:36.031+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : Product(pno=null, pname=새로운 상품, price=1000, pdesc=신규 추가 상품입니다., delFlag=false)
+2024-08-19T16:06:36.031+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.service.ProductServiceImpl         : [ProductImage(fileName=ea400bb0-fcd3-40eb-bd51-13aedfb8521b_Test1.jpg, ord=0), ProductImage(fileName=b066567c-68e0-4a74-befc-100c5103f2fa_Test2.jpg, ord=1)]
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

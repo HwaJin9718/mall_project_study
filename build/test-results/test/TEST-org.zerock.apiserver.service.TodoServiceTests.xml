@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.zerock.apiserver.service.TodoServiceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-08-19T07:06:36" hostname="DESKTOP-G6GID5V" time="0.033">
+  <properties/>
+  <testcase name="testGet()" classname="org.zerock.apiserver.service.TodoServiceTests" time="0.006"/>
+  <testcase name="testGetList()" classname="org.zerock.apiserver.service.TodoServiceTests" time="0.019"/>
+  <testcase name="testRegister()" classname="org.zerock.apiserver.service.TodoServiceTests" time="0.006"/>
+  <system-out><![CDATA[2024-08-19T16:06:36.044+09:00  INFO 4316 --- [apiserver] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.zerock.apiserver.service.TodoServiceTests]: TodoServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-19T16:06:36.046+09:00  INFO 4316 --- [apiserver] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.service.TodoServiceTests
+Hibernate: 
+    select
+        t1_0.tno,
+        t1_0.complete,
+        t1_0.content,
+        t1_0.due_date,
+        t1_0.title 
+    from
+        tbl_todo t1_0 
+    where
+        t1_0.tno=?
+2024-08-19T16:06:36.055+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : TodoDTO(tno=50, title=Title..48, content=Content...48, complete=false, dueDate=2023-12-30)
+2024-08-19T16:06:36.060+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.search.TodoSearchImpl   : search1....................................
+Hibernate: 
+    select
+        t1_0.tno,
+        t1_0.complete,
+        t1_0.content,
+        t1_0.due_date,
+        t1_0.title 
+    from
+        tbl_todo t1_0 
+    order by
+        t1_0.tno desc 
+    limit
+        ?, ?
+Hibernate: 
+    select
+        count(t1_0.tno) 
+    from
+        tbl_todo t1_0
+2024-08-19T16:06:36.074+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : PageResponseDTO(dtoList=[TodoDTO(tno=611, title=Title..., content=Content................, complete=false, dueDate=2023-12-31), TodoDTO(tno=610, title=Title..99, content=Content...99, complete=false, dueDate=2023-12-30), TodoDTO(tno=609, title=Title..98, content=Content...98, complete=false, dueDate=2023-12-30), TodoDTO(tno=608, title=Title..97, content=Content...97, complete=false, dueDate=2023-12-30), TodoDTO(tno=607, title=Title..96, content=Content...96, complete=false, dueDate=2023-12-30), TodoDTO(tno=606, title=Title..95, content=Content...95, complete=false, dueDate=2023-12-30), TodoDTO(tno=605, title=Title..94, content=Content...94, complete=false, dueDate=2023-12-30), TodoDTO(tno=604, title=Title..93, content=Content...93, complete=false, dueDate=2023-12-30), TodoDTO(tno=603, title=Title..92, content=Content...92, complete=false, dueDate=2023-12-30), TodoDTO(tno=602, title=Title..91, content=Content...91, complete=false, dueDate=2023-12-30)], pageNumList=[11, 12, 13, 14, 15, 16, 17, 18, 19, 20], pageRequestDTO=PageRequestDTO(page=11, size=10), prev=true, next=true, totalCount=708, prevPage=10, nextPage=21, totalPage=10, current=11)
+Hibernate: 
+    insert 
+    into
+        tbl_todo
+        (complete, content, due_date, title) 
+    values
+        (?, ?, ?, ?) 
+    returning tno
+2024-08-19T16:06:36.082+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.apiserver.service.TodoServiceTests   : 712
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

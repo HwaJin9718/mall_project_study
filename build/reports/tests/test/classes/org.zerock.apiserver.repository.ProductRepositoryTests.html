@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ProductRepositoryTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ProductRepositoryTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.zerock.apiserver.repository.html">org.zerock.apiserver.repository</a> &gt; ProductRepositoryTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.625s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testDelete()</td>
+<td class="success">0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInsert()</td>
+<td class="success">0.148s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testList()</td>
+<td class="success">0.052s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRead()</td>
+<td class="success">0.043s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRead2()</td>
+<td class="success">0.239s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSearch()</td>
+<td class="success">0.094s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUpdate()</td>
+<td class="success">0.026s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-08-19T16:06:34.744+09:00  INFO 4316 --- [apiserver] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.zerock.apiserver.repository.ProductRepositoryTests]: ProductRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-19T16:06:34.769+09:00  INFO 4316 --- [apiserver] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.zerock.apiserver.ApiserverApplication for test class org.zerock.apiserver.repository.ProductRepositoryTests
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        il1_0.product_pno,
+        il1_0.file_name,
+        il1_0.ord,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        p1_0.pno=?
+2024-08-19T16:06:34.997+09:00 DEBUG 4316 --- [apiserver] [    Test worker] o.h.sql.results.internal.ResultsHelper   : Collection fully initialized: [org.zerock.apiserver.domain.Product.imageList#1]
+2024-08-19T16:06:35.011+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : Product(pno=1, pname=Test , price=3000, pdesc=Test Desc, delFlag=true)
+2024-08-19T16:06:35.012+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [ProductImage(fileName=68f1ca5c-b56c-43c9-a8fc-1dd04cca9a56_P_IMAGE1.jpg, ord=0), ProductImage(fileName=79c2e6fa-967a-4d9e-9038-265ac98fd245_P_IMAGE2.jpg, ord=1), ProductImage(fileName=940af2ff-1f02-4ce6-9286-490517410972_P_IMAGE3.jpg, ord=2)]
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price,
+        il1_0.file_name,
+        il1_0.ord 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=0 
+        and p1_0.del_flag=0 
+    order by
+        p1_0.pno desc 
+    limit
+        ?
+Hibernate: 
+    select
+        count(p1_0.pno) 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=0 
+        and p1_0.del_flag=0
+2024-08-19T16:06:35.063+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=49, pname=새로운 상품, price=1000, pdesc=신규 추가 상품입니다., delFlag=false), ProductImage(fileName=b920dbf4-62d5-44e6-9a7f-6f5b7f87b6c2_Test1.jpg, ord=0)]
+2024-08-19T16:06:35.065+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=48, pname=Test 9, price=1000, pdesc=Test Desc ...9, delFlag=false), ProductImage(fileName=f1b92c1f-11d4-4a6e-a4fe-822c757bef88_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.065+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=47, pname=Test 8, price=1000, pdesc=Test Desc ...8, delFlag=false), ProductImage(fileName=377f46ed-1551-402d-bc52-c552d1537e7d_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.065+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=46, pname=Test 7, price=1000, pdesc=Test Desc ...7, delFlag=false), ProductImage(fileName=635a7971-6844-4a8d-b274-109b7efb4980_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.065+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=45, pname=Test 6, price=1000, pdesc=Test Desc ...6, delFlag=false), ProductImage(fileName=77f7910d-f927-4321-97f0-f98e509a398f_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.066+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=44, pname=Test 5, price=1000, pdesc=Test Desc ...5, delFlag=false), ProductImage(fileName=bf70db81-ed98-4d33-b6ca-0c0851ac223b_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.066+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=43, pname=Test 4, price=1000, pdesc=Test Desc ...4, delFlag=false), ProductImage(fileName=e98dd35e-c0ad-4ee1-8fa8-ed8c313bbe3e_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.066+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=42, pname=Test 3, price=1000, pdesc=Test Desc ...3, delFlag=false), ProductImage(fileName=7bf5d3ed-2a87-4e33-bb3c-8baf33f03ded_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.066+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=41, pname=Test 2, price=1000, pdesc=Test Desc ...2, delFlag=false), ProductImage(fileName=20ad8c68-c970-47a5-95e7-6774771af190_IMAGE1.jpg, ord=0)]
+2024-08-19T16:06:35.066+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [Product(pno=40, pname=Test 1, price=1000, pdesc=Test Desc ...1, delFlag=false), ProductImage(fileName=b13f070a-37cf-4bca-a54d-69516c3317bd_IMAGE1.jpg, ord=0)]
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price 
+    from
+        tbl_product p1_0 
+    where
+        p1_0.pno=?
+2024-08-19T16:06:35.103+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : Product(pno=1, pname=Test , price=3000, pdesc=Test Desc, delFlag=true)
+Hibernate: 
+    select
+        il1_0.product_pno,
+        il1_0.file_name,
+        il1_0.ord 
+    from
+        product_image_list il1_0 
+    where
+        il1_0.product_pno=?
+2024-08-19T16:06:35.108+09:00 DEBUG 4316 --- [apiserver] [    Test worker] o.h.sql.results.internal.ResultsHelper   : Collection fully initialized: [org.zerock.apiserver.domain.Product.imageList#1]
+2024-08-19T16:06:35.108+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.repository.ProductRepositoryTests  : [ProductImage(fileName=68f1ca5c-b56c-43c9-a8fc-1dd04cca9a56_P_IMAGE1.jpg, ord=0), ProductImage(fileName=79c2e6fa-967a-4d9e-9038-265ac98fd245_P_IMAGE2.jpg, ord=1), ProductImage(fileName=940af2ff-1f02-4ce6-9286-490517410972_P_IMAGE3.jpg, ord=2)]
+Hibernate: 
+    update
+        tbl_product p1_0 
+    set
+        del_flag=? 
+    where
+        p1_0.pno=?
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        tbl_product
+        (del_flag, pdesc, pname, price) 
+    values
+        (?, ?, ?, ?) 
+    returning pno
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+2024-08-19T16:06:35.291+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.r.search.ProductSearchImpl         : -----------------------searchList-----------------------
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price,
+        il1_0.file_name,
+        il1_0.ord 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=? 
+    order by
+        p1_0.pno desc 
+    limit
+        ?, ?
+Hibernate: 
+    select
+        count(p1_0.pno) 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        il1_0.ord=?
+2024-08-19T16:06:35.379+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.r.search.ProductSearchImpl         : =======================================================
+2024-08-19T16:06:35.380+09:00  INFO 4316 --- [apiserver] [    Test worker] o.z.a.r.search.ProductSearchImpl         : [[Product(pno=59, pname=Test 9, price=1000, pdesc=Test Desc ...9, delFlag=false), ProductImage(fileName=c9443674-9e18-4971-ae53-e4ab2b22f79d_IMAGE1.jpg, ord=0)], [Product(pno=58, pname=Test 8, price=1000, pdesc=Test Desc ...8, delFlag=false), ProductImage(fileName=b75b95ed-bc7f-49bc-9f40-73274eb46b6f_IMAGE1.jpg, ord=0)], [Product(pno=57, pname=Test 7, price=1000, pdesc=Test Desc ...7, delFlag=false), ProductImage(fileName=3aa02366-044a-497c-a91b-33bc2fd73059_IMAGE1.jpg, ord=0)], [Product(pno=56, pname=Test 6, price=1000, pdesc=Test Desc ...6, delFlag=false), ProductImage(fileName=7a793005-c87c-4c4a-8731-549c1cf5556d_IMAGE1.jpg, ord=0)], [Product(pno=55, pname=Test 5, price=1000, pdesc=Test Desc ...5, delFlag=false), ProductImage(fileName=e3c851b2-81d6-4042-90da-6f9e75a39ede_IMAGE1.jpg, ord=0)], [Product(pno=54, pname=Test 4, price=1000, pdesc=Test Desc ...4, delFlag=false), ProductImage(fileName=2eb7cd94-4dd5-4caa-8fed-bb658005ef46_IMAGE1.jpg, ord=0)], [Product(pno=53, pname=Test 3, price=1000, pdesc=Test Desc ...3, delFlag=false), ProductImage(fileName=472d9c4f-b9a1-4b17-8f29-525fea308d51_IMAGE1.jpg, ord=0)], [Product(pno=52, pname=Test 2, price=1000, pdesc=Test Desc ...2, delFlag=false), ProductImage(fileName=4aab91fe-3705-4531-bdd7-b3d3ba02f27c_IMAGE1.jpg, ord=0)], [Product(pno=51, pname=Test 1, price=1000, pdesc=Test Desc ...1, delFlag=false), ProductImage(fileName=6aed7520-8573-46ef-80d4-db0892132c02_IMAGE1.jpg, ord=0)], [Product(pno=50, pname=Test 0, price=1000, pdesc=Test Desc ...0, delFlag=false), ProductImage(fileName=c520ab8e-8568-4b43-b729-7262acebfd90_IMAGE1.jpg, ord=0)]]
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        il1_0.product_pno,
+        il1_0.file_name,
+        il1_0.ord,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price 
+    from
+        tbl_product p1_0 
+    left join
+        product_image_list il1_0 
+            on p1_0.pno=il1_0.product_pno 
+    where
+        p1_0.pno=?
+2024-08-19T16:06:35.389+09:00 DEBUG 4316 --- [apiserver] [    Test worker] o.h.sql.results.internal.ResultsHelper   : Collection fully initialized: [org.zerock.apiserver.domain.Product.imageList#1]
+Hibernate: 
+    select
+        p1_0.pno,
+        p1_0.del_flag,
+        p1_0.pdesc,
+        p1_0.pname,
+        p1_0.price 
+    from
+        tbl_product p1_0 
+    where
+        p1_0.pno=?
+Hibernate: 
+    select
+        il1_0.product_pno,
+        il1_0.file_name,
+        il1_0.ord 
+    from
+        product_image_list il1_0 
+    where
+        il1_0.product_pno=?
+2024-08-19T16:06:35.397+09:00 DEBUG 4316 --- [apiserver] [    Test worker] o.h.sql.results.internal.ResultsHelper   : Collection fully initialized: [org.zerock.apiserver.domain.Product.imageList#1]
+Hibernate: 
+    delete 
+    from
+        product_image_list 
+    where
+        product_pno=?
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product_image_list
+        (product_pno, file_name, ord) 
+    values
+        (?, ?, ?)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 8. 19. 오후 4:06:36</p>
+</div>
+</div>
+</body>
+</html>
